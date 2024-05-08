@@ -1,17 +1,124 @@
-# Nome do meu projeto
+# Versionamento de Código com Git e GitHub
 
-Rápida descrição do objetivo de fazer esse projeto
+Este projeto tem como objetivo fornecer uma referência rápida e fácil de usar para os comandos essenciais do Git. Ele inclui comandos para todas as tarefas básicas de controle de versão, como:
 
-| :placard: Vitrine.Dev |     |
-| -------------  | --- |
-| :sparkles: Nome        | **Titulo do meu projeto**
-| :label: Tecnologias | java, html, ruby, c# (tecnologias utilizadas)
-| :rocket: URL         | https://url-deploy.com.br
-| :fire: Desafio     | https://url-do-desafio.com.br
+* Configuração inicial do Git
+* Criação e gerenciamento de repositórios
+* Adição, remoção e modificação de arquivos
+* Commits e histórico de versões
+* Ramificações e mesclagem
+* Trabalho em equipe e colaboração
 
-<!-- Inserir imagem com a #vitrinedev ao final do link -->
-![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
+![](https://hermes.dio.me/articles/cover/e34ac480-ce44-439a-b28b-1845bd195afe.png#vitrinedev)
 
-## Detalhes do projeto
+##
+### 📚 Documentação
+* <img src="https://skillicons.dev/icons?i=git" width="18px"> [Documentação Git](https://git-scm.com/doc) 
+* <img src="https://skillicons.dev/icons?i=github" width="18px"> [Documentação GitHub](https://docs.github.com/)
 
-Textos e imagens que descrevam seu projeto, suas conquistas, seus desafios, próximos passos, etc...
+##
+### 💻 Atalho dos Comandos
+
+| Ação | Como usar |
+|-------|---------|
+| Configuração do Git | [Como usar](#configuração-do-git) |
+| Primeiro commit | [Como usar](#primeiro-commit) |
+| Remoção | [Como usar](#remoção) |
+| Atualizar commit | [Como usar](#atualizar-commit) |
+| Ignorar pastas ou arquivos | [Como usar](#ignorar-pastas-ou-arquivos) |
+| Comandos importantes do git | [Como usar](#comandos-importantes-do-git) |
+| Puxando alterações | [Como usar](#puxando-alterações) |
+| Branches | [Como usar](#branches) |
+| Tags | [Como usar](#tags) |
+
+##
+### Configuração do Git
+```bash
+git config --global user.email {email}      # Definir/Alterar email
+git config --global user.nome {nome}        # Definir/Alterar nome
+git config --global core.longpaths true     # Definir/Alterar tamanho de diretórios
+```
+
+
+### Primeiro commit
+```bash
+git init                                    # Inicializa um novo repositório local
+git add . ou {nome do arquivo}              # Adiciona arquivos modificados ao palco
+git commit -m "mensagem"                    # Realiza o commit dos arquivos modificados
+git branch -m {nome da branch}              # Renomear a branch atual
+git remote add origin {link do repositório} # Adiciona o link do repositório remoto ao repositório local
+git push -u origin {nome da branch}         # Realiza o primeiro envio envio das modificações
+```
+
+### Remoção
+```bash
+git rm -r --cached {nome da pasta}  # Remove a pasta e seus arquivos
+git rm --cached {nome do arquivo}   # Remove o arquivo
+rm -r .git/                         # Remove o repositório local
+```
+
+### Atualizar commit
+```bash
+git add . ou {nome do arquivo}      # Adiciona arquivos modificados ao palco
+git commit -m "mensagem"            # Realiza o commit dos arquivos modificados
+git push -u origin main             # Realiza o envio do commit para o repositório remoto
+```
+
+### Ignorar pastas ou arquivos
+```bash
+touch .gitignore                            # Cria o arquivo .gitignore
+echo "{nome do arquivo}" >> .gitignore      # Adiciona o arquivo ao .gitignore
+echo "{nome da pasta/}" >> .gitignore       # Adiciona a pasta ao .gitignore
+```
+<small>Nota: o comando ```touch``` só funciona no terminal Bash, o terminal normal não reconhece esse comando.</small>
+
+### Comandos importantes do git
+```bash
+git restore nomeDoArquivo                                                   # Restaura o arquivo do commit
+###
+git commit --amend -m "mensagem"                                            # Realiza mudança na mensagem do commit
+###
+git log                                                                     # Lista todos os commits
+git reset --soft {codigo do commit}                                         # Retorna ao commit anterior
+###
+git reset . ou {nomeDoArquivo}                                              # Remove o arquivo do commit
+git restore --staged {nomeDoArquivo}                                        # Restaura o arquivo do commit
+###
+git clone {link do repositório} --branch {nome da branch} --single-branch   # Clonar branch de um repositório especifico
+###
+git diff --staged                                                           # Lista as alterações que serão incluídas no próximo commit
+###
+git commit -sm "mensagem"                                                   # Realiza o commit com sua assinatura
+git commit -s                                                               # Realiza o commit com sua assinatura sem uma mensagem
+
+```
+
+### Puxando alterações
+```bash
+git pull
+```
+
+### Branches
+```bash
+git branch -v                                       # Lista todos os commits de cada branch
+git branch                                          # Lista todas as branches
+git branch {nome da nova branch}                    # Cria a nova branch
+git checkout {nome da branch}                       # Muda para a branch
+git checkout -b {nome da nova branch}               # Muda para a nova branch
+git branch -d {nome da branch}                      # Remove a branch
+git merge {nome da outra branch}                    # Mescla as branches
+git diff {nome da branch} {nome da outra branch}    # Visualiza as diferenças entre as branches. Exemplo: git diff main origin/main
+```
+<small>Nota: O comando ```git checkout -b``` além de criar uma nova branch, também realiza a troca automatica sem precisar de um novo comando.</small>
+
+### Tags
+```bash
+git tag                                     # Lista todas as tags
+git tag -a {nome da tag} -m "mensagem"      # Cria uma nova tag
+git tag -d {nome da tag}                    # Remove a tag
+```
+
+##
+### 🔍 Referências
+- [Git - Reference](https://git-scm.com/docs/)
+- [Digital Innovation One](https://wwwdio.me/)
